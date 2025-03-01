@@ -1,0 +1,68 @@
+Q1. What is the KNN algorithm?
+K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for classification and regression tasks. It classifies a new data point based on the majority class of its K nearest neighbors (for classification) or predicts a value based on the average of its K nearest neighbors (for regression). KNN is a lazy learner, meaning it does not learn an explicit model but rather memorizes training data.
+Q2. How do you choose the value of K in KNN?
+Choosing the optimal value of K is crucial for KNN performance. Some common methods include:
+* Cross-validation: Trying different K values and selecting the one with the best accuracy.
+* Odd K values: To avoid ties in classification.
+* Rule of thumb: K ? ?N, where N is the number of data points.
+* Bias-variance tradeoff: 
+o A small K (e.g., K=1) can lead to overfitting (high variance).
+o A large K can lead to underfitting (high bias).
+Q3. What is the difference between KNN classifier and KNN regressor?
+* KNN Classifier: Assigns a label based on the majority class of K nearest neighbors.
+* KNN Regressor: Predicts a continuous value based on the average (or weighted average) of K nearest neighbors.
+Q4. How do you measure the performance of KNN?
+* For classification: 
+o Accuracy
+o Precision, Recall, and F1-score
+o Confusion matrix
+o ROC-AUC Curve
+* For regression: 
+o Mean Squared Error (MSE)
+o Root Mean Squared Error (RMSE)
+o Mean Absolute Error (MAE)
+o R² Score
+Q5. What is the curse of dimensionality in KNN?
+The curse of dimensionality refers to the problem where increasing the number of features (dimensions) in KNN reduces its effectiveness. As dimensions increase:
+* Data points become sparse, making distance measurements less meaningful.
+* Computational cost increases significantly.
+* Overfitting can occur due to irrelevant features.
+Solution: Use dimensionality reduction techniques like PCA, feature selection, or LDA.
+Q6. How do you handle missing values in KNN?
+* Imputation methods: 
+o Replace missing values with the mean, median, or mode.
+o Use KNN imputation, where missing values are predicted based on the K nearest neighbors.
+* Remove missing values (if they are not too many).
+Q7. Compare and contrast the performance of the KNN classifier and regressor. Which one is better for which type of problem?
+* KNN Classifier is better for categorical target variables (e.g., spam detection, medical diagnosis).
+* KNN Regressor is better for continuous target variables (e.g., predicting house prices, temperature forecasting).
+* Comparison: 
+o KNN Classifier is more affected by class imbalance.
+o KNN Regressor is sensitive to outliers, as it relies on averaging.
+Q8. What are the strengths and weaknesses of the KNN algorithm for classification and regression tasks, and how can these be addressed?
+Strengths:
+? Simple and intuitive – Easy to implement.
+? Non-parametric – No assumptions about data distribution.
+? Effective with small datasets – Works well when data is limited.
+Weaknesses & Solutions:
+? Computationally expensive – Use KD-Trees or Ball Trees for optimization.
+? Sensitive to irrelevant features – Use feature selection or PCA.
+? Memory intensive – Store only important samples using prototype selection.
+Q9. What is the difference between Euclidean distance and Manhattan distance in KNN?
+* Euclidean Distance: 
+o Measures the straight-line distance between two points.
+o Suitable for continuous features and evenly spaced data.
+o Formula: d=?(xi?yi)2d = \sqrt{\sum (x_i - y_i)^2} 
+* Manhattan Distance: 
+o Measures the sum of absolute differences (grid-based distance).
+o Better for categorical or high-dimensional data.
+o Formula: d=??xi?yi?d = \sum |x_i - y_i| 
+Q10. What is the role of feature scaling in KNN?
+KNN relies on distance measurements, so feature scaling is essential to ensure all features contribute equally.
+* Methods: 
+o Min-max normalization: Rescales data to [0,1].
+o Standardization (Z-score normalization): Transforms data to have zero mean and unit variance.
+* Why? 
+o Prevents dominance of large-scale features.
+o Improves accuracy and efficiency of KNN.
+
