@@ -1,0 +1,98 @@
+Q1. What are Eigenvalues and Eigenvectors? How are they related to the Eigen-Decomposition approach?
+Eigenvalues and eigenvectors are fundamental concepts in linear algebra used to analyze linear transformations.
+* Eigenvalues (?\lambda): Scalars that indicate how much an eigenvector is stretched or shrunk during a linear transformation.
+* Eigenvectors (v\mathbf{v}): Nonzero vectors that remain in the same direction after a transformation by a matrix AA.
+Mathematically, they satisfy the equation:
+Av=?vA \mathbf{v} = \lambda \mathbf{v} 
+where:
+* AA is an n×nn \times n square matrix.
+* v\mathbf{v} is the eigenvector.
+* ?\lambda is the eigenvalue.
+Relation to Eigen-Decomposition:
+Eigen-decomposition is the process of breaking a matrix into its eigenvalues and eigenvectors:
+A=V?V?1A = V \Lambda V^{-1} 
+where:
+* VV is the matrix of eigenvectors.
+* ?\Lambda is the diagonal matrix of eigenvalues.
+Example:
+For matrix
+A=[4?211]A = \begin{bmatrix} 4 & -2 \\ 1 & 1 \end{bmatrix} 
+Solving det?(A??I)=0\det(A - \lambda I) = 0 gives eigenvalues ?1=3\lambda_1 = 3, ?2=2\lambda_2 = 2. Corresponding eigenvectors are found by solving (A??I)v=0(A - \lambda I) v = 0.
+
+Q2. What is eigen decomposition and what is its significance in linear algebra?
+Eigen decomposition is the factorization of a matrix into eigenvalues and eigenvectors:
+A=V?V?1A = V \Lambda V^{-1} 
+Significance:
+* Simplifies matrix operations (e.g., matrix exponentiation, inversion).
+* Used in dimensionality reduction (e.g., Principal Component Analysis).
+* Helps analyze linear transformations (e.g., stability analysis in differential equations).
+
+Q3. What are the conditions that must be satisfied for a square matrix to be diagonalizable using the Eigen-Decomposition approach? Provide a brief proof to support your answer.
+A matrix AA is diagonalizable if:
+1. It has nn linearly independent eigenvectors (for an n×nn \times n matrix).
+2. Its characteristic polynomial has nn roots (i.e., eigenvalues, considering multiplicity).
+Proof:
+* A matrix is diagonalizable if we can write A=V?V?1A = V \Lambda V^{-1}.
+* This requires VV to have nn linearly independent eigenvectors.
+* If the geometric multiplicity (number of independent eigenvectors) of each eigenvalue equals its algebraic multiplicity (repetition in characteristic equation), then AA is diagonalizable.
+For example, a symmetric matrix is always diagonalizable by the Spectral Theorem.
+
+Q4. What is the significance of the spectral theorem in the context of the Eigen-Decomposition approach? How is it related to the diagonalizability of a matrix? Explain with an example.
+The Spectral Theorem states that any real symmetric matrix (A=ATA = A^T) is orthogonally diagonalizable:
+A=Q?QTA = Q \Lambda Q^T 
+where:
+* QQ is an orthogonal matrix (columns are orthonormal eigenvectors).
+* ?\Lambda is a diagonal matrix of eigenvalues.
+Significance:
+* Ensures symmetric matrices are always diagonalizable.
+* Used in PCA, image processing, and quantum mechanics.
+Example:
+For
+A=[2?1?12]A = \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix} 
+AA is symmetric, so it's diagonalizable with an orthogonal matrix.
+
+Q5. How do you find the eigenvalues of a matrix and what do they represent?
+To find eigenvalues:
+1. Solve the characteristic equation: det?(A??I)=0\det(A - \lambda I) = 0 
+2. Solve for ?\lambda (roots of the polynomial).
+Interpretation:
+* Eigenvalues represent the scaling factor of the eigenvectors.
+* In dynamics, they indicate stability (e.g., if all eigenvalues are negative, the system is stable).
+
+Q6. What are eigenvectors and how are they related to eigenvalues?
+* Eigenvectors are special vectors that only get scaled (not rotated) when multiplied by the matrix.
+* Eigenvalues determine the amount of scaling.
+Mathematically,
+Av=?vA \mathbf{v} = \lambda \mathbf{v} 
+Eigenvectors provide the directions of transformation, while eigenvalues determine the magnitude.
+
+Q7. Can you explain the geometric interpretation of eigenvectors and eigenvalues?
+* Eigenvectors represent axes along which a linear transformation acts only by stretching or compressing.
+* Eigenvalues measure how much the vector is stretched.
+Example:
+If AA represents a rotation-scaling transformation, eigenvectors are the directions that remain unchanged (except for stretching).
+
+Q8. What are some real-world applications of eigen decomposition?
+1. Principal Component Analysis (PCA): Used for dimensionality reduction in machine learning.
+2. Google PageRank Algorithm: Uses eigenvectors to rank web pages.
+3. Quantum Mechanics: Eigenvalues represent energy levels of quantum systems.
+4. Vibration Analysis: Eigenvalues help find natural frequencies of structures.
+
+Q9. Can a matrix have more than one set of eigenvectors and eigenvalues?
+* Eigenvalues are unique (except for ordering).
+* Eigenvectors are not unique (they can be scaled or linearly combined).
+* If an eigenvalue has multiplicity > 1, it can have multiple independent eigenvectors.
+Example: The identity matrix
+I=[1001]I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} 
+has eigenvalues ?=1,1\lambda = 1, 1 with infinitely many eigenvectors.
+
+Q10. In what ways is the Eigen-Decomposition approach useful in data analysis and machine learning?
+1. Principal Component Analysis (PCA)
+* Uses eigen decomposition to reduce dimensionality while preserving variance.
+* Eigenvectors (principal components) capture the most significant features of the data.
+2. Spectral Clustering
+* Uses eigenvalues of the Laplacian matrix of a graph to find clusters.
+3. Latent Semantic Analysis (LSA)
+* Uses eigen decomposition for text mining and document similarity analysis.
+Eigen decomposition is a fundamental tool for feature extraction, noise reduction, and data compression.
+
